@@ -10,7 +10,7 @@ class Room:
      def __init__(self,x,y):
           self.square = x * y + 15 # 15м - подсобное помещение, площадь комнаты (пол), используем один и тот же атрибут square
      def tables(self,a,b,t):
-          self.tables = All(a,b) # tables-объект,вычисляется площадь стола по п.1
+          self.tables = All(a,b) # tables-объект,вычисляется площадь стола по формуле класса п.1
           self.numb_t = t # кол-во столов
      def free_space(self):
           self.freespace = self.square - self.tables.square * self.numb_t
