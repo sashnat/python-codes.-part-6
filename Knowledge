@@ -1,19 +1,19 @@
 class Information:
      def __init__(self,info):
           self.info = info
-     def extract(self,i): 
+     def extract(self,i):
           self.current = self.info[i]
           return "%s" % self.current
       # Объекты данного класса при создании должны содержать ту или иную информацию
       #(содержание урока), допустим в виде списка. В классе также предусмотрен метод extract,
       # позволяющий извлекать какую-то часть информации и возвращать ее в основную программу.
-      
+
 class Selfstudy:
      def knowledge(self,web):
           self.web = web
      def fromweb(self):
           return "%s" % self.web
-     
+
 class Teacher:
      def into(self,phrase):
           self.phrase = phrase
@@ -21,15 +21,18 @@ class Teacher:
           return "%s" % self.phrase
       # Объектам типа «Учитель» в нашей программе позволено
       # лишь вспоминать фразу и громко транслировать.
-      
+
 class Pupil:
      def __init__(self):
           self.know = []
      def take(self, i):
           self.know.append(i)
+          for j in range(len(self.know)):
+               if j >= 1:
+                    print('It is the time to self-study')
       # Объекты класса Pupil уже при своем создании обязаны иметь атрибут know,
       # куда будут помещаться знания.
-      # Также предусмотрен метод take, обеспечивающий приемку информации.    
+      # Также предусмотрен метод take, обеспечивающий приемку информации.
 inform = Information(["> (больше)","< (меньше)","== (равно)", "!= (не равно)"])
 t = Teacher()
 p1 = Pupil()
@@ -41,8 +44,9 @@ t.into(inform.extract(3))
 p1.take(t.out())
 print ("1-ый ученик пока еще знает только ", p1.know)
 
-p3.take(inform.extract(2))
-print ("3-ий ученик пока еще знает только ", p3.know)
+s.knowledge(inform.extract(2))
+p2.take(s.fromweb())
+print ("2-ой ученик пока еще знает только ", p2.know)
 
 s.knowledge(inform.extract(1))
 t.into(inform.extract(0))
@@ -51,8 +55,8 @@ p2.take(t.out())
 p3.take(s.fromweb())
 
 print ("1-ый ученик знает, что ", p1.know) # накапливание знаний: 1-от учителя, 2-от учителя
-print ("2-ой ученик знает, что ", p2.know)
-print ("3-ий ученик знает, что ", p3.know) # накапливание знаний: 1-от учителя, 2-из web
+print ("2-ой ученик знает, что ", p2.know) # накапливание знаний: 1-из web, 2-от учителя
+print ("3-ий ученик знает, что ", p3.know) # накапливание знаний: 1-от учителя
 
 # Учитель берет с помощью метода extract объекта inform часть информации.
 # Ученики, используя свой метод take имеют возможность получить информацию,
