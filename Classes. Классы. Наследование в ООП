@@ -25,7 +25,7 @@ class Square(Figure):
          self.height = h
      def howsides(self,n):
           if not n == 4:
-               print ("It is not a sguare")
+               print ("It is not a square")
           else:
                self.sides = n
 
