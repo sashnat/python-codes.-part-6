@@ -8,8 +8,8 @@ class Figure:
      def __init__(self,w="white"):
          self.color = w
      def changecolor(self,ch):
-         self.chcolor = ch    
-     
+         self.chcolor = ch
+
 class Oval(Figure):
      def __init__(self,r,x,y):
          self.radius = r
@@ -18,20 +18,21 @@ class Oval(Figure):
      def out(self):
          print (self.radius,self.ox,self.oy)
 
-          
+
 class Square(Figure):
      def __init__(self,w,h):
          self.widht = w
          self.height = h
      def howsides(self,n):
-          if not n == 4:
+          self.sides = n
+          if not self.sides == 4:
                print ("It is not a sguare")
           else:
-               self.sides = n
+               print ("It is a sguare")
 
      def outsides(self):
           print (self.sides)
-          
+
 x = Figure("red")
 print(x.color)
 
