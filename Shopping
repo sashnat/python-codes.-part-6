@@ -17,11 +17,11 @@ class Shopping:
      def plus(self, p):
           self.plus = p
           self.money = self.money + self.plus
-          self.mwhere(self.money)
+          #self.mwhere(self.money)
      def minus(self, mi):
           self.minus = mi
           self.money = self.money - self.minus
-          self.mwhere(self.money)
+          #self.mwhere(self.money)
 
 m1 = Shopping("shoes", "brown", 99)
 m2 = Shopping("bag", "beige", 300)
